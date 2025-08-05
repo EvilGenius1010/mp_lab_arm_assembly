@@ -1,0 +1,51 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROG1, CODE, READONLY
+    2 00000000         ENTRY
+    3 00000000 E3A00000        MOV              R0,#2_0000000
+    4 00000004 E1B010A0        MOVS             R1,R0,LSR #1
+    5 00000008 23E02000        MOVCS            R2,#0XFFFFFFFF
+    6 0000000C 359F2000        LDRCC            R2,=0X55555555
+    7 00000010 EAFFFFFE 
+                       s       B                s
+    8 00000014                 END
+              55555555 
+Command Line: --debug --xref --apcs=interwork --depend=.\odd_or_even.d -o.\odd_
+or_even.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\
+Philips --predefine="__EVAL SETA 1" --list=.\odd_or_even.lst odd_or_even.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 2 in file odd_or_even.s
+   Uses
+      None
+Comment: ENTRY unused
+PROG1 00000000
+
+Symbol: PROG1
+   Definitions
+      At line 1 in file odd_or_even.s
+   Uses
+      None
+Comment: PROG1 unused
+s 00000010
+
+Symbol: s
+   Definitions
+      At line 7 in file odd_or_even.s
+   Uses
+      At line 7 in file odd_or_even.s
+Comment: s used once
+3 symbols
+336 symbols in table

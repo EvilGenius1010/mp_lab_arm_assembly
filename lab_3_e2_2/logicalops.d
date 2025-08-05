@@ -1,0 +1,1 @@
+.\logicalops.o: logicalops.s

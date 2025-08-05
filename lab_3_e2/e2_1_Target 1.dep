@@ -1,0 +1,3 @@
+Dependencies for Project 'e2_1', Target 'Target 1': (DO NOT MODIFY !)
+F (.\odd_or_even.s)(0x6891970A)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\odd_or_even.lst --xref -o .\odd_or_even.o --depend .\odd_or_even.d)
+F (.\logical_ops.s)(0x68919DE4)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\logical_ops.lst --xref -o .\logical_ops.o --depend .\logical_ops.d)

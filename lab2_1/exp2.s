@@ -1,0 +1,76 @@
+        AREA PROGRAM1, CODE, READONLY
+        ENTRY
+
+AD1     EQU 0XAB
+NUM2    EQU 247
+NUM3    EQU AD1+1
+
+        MOV R0, #AD1
+        MOV R1, #NUM2
+        MOV R2, #NUM3
+
+        LDR R0, =Q
+        ADR R3, P
+        LDR R5, =R
+
+loop    B loop
+
+Q       DCD 0xAABBCCDD
+P       DCD 0xABCDEF78
+
+        AREA MEMORY, DATA, READWRITE
+VALU    DCD 0x11223344
+R       DCD 0xABBCCDDE
+T       DCD 0x11223344
+
+RES     DCB 0,0,0,0,0,0,0,0,0,0    ; Reserve 10 bytes
+
+        END
+
+		
+		
+		/*
+		
+	01 AD1 EQU OXAB 02 NUM2 EQU 247
+	03 NUM3 EQU AD1+1
+	AREA PROGRAM1, CODE, READONLY
+	ENTRY
+	04
+	05
+	06
+	07
+	08
+	09
+	10
+	11
+	12
+	13
+	14 s
+	15
+	Q
+	16 P
+	17
+	18
+	19
+	MOV RO, #AD1
+	;?
+	MOV R1, #NUM2;2
+	MOV R2, #NUM3 ;?
+	LDR RO, Q
+	LDR R1,=Q
+	ADR R3, P
+	LDR R5, =R
+	;LDR R6,R
+	B 3
+	DCD 0xAABBCCDD
+	DCD 0xABCDEF78
+	AREA MEMORY, DATA, READWRITE ;? VALU DCD 0X11223344
+	20 R
+	DCD OXABBCCDDE
+	21 T
+	DCD 0X11223344
+	222
+	23 RES SPACE 10; RESERVE 10 LOCATIONS
+	24
+	end
+		*/

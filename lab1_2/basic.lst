@@ -1,0 +1,34 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM1, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000 E3A01012        MOV              R1, #0x00000012 ; R1 = 18
+    4 00000004 E3A02005        MOV              R2, #0x00000005 ; R2 = 5
+    5 00000008 E0813002        ADD              R3, R1, R2
+    6 0000000C EAFFFFFE        B                .           ; Infinite loop to 
+                                                            prevent falling off
+                                                            
+    7 00000010                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\basic.d -o.\basic.o -I
+C:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --pr
+edefine="__EVAL SETA 1" --list=.\basic.lst basic.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+PROGRAM1 00000000
+
+Symbol: PROGRAM1
+   Definitions
+      At line 1 in file basic.s
+   Uses
+      None
+Comment: PROGRAM1 unused
+1 symbol
+332 symbols in table

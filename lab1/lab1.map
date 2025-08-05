@@ -1,0 +1,116 @@
+ARM Linker, 5.03 [Build 76] [MDK-ARM Lite]
+
+==============================================================================
+
+Section Cross References
+
+    startup.o(RESET) refers to startup.o(STACK) for Stack_Top
+    startup.o(RESET) refers to basic.o(PROGRAM1) for __main
+    startup.o(.text) refers to startup.o(HEAP) for Heap_Mem
+    startup.o(.text) refers to startup.o(STACK) for Stack_Mem
+
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    .text                                    0x00000000   Section       32  startup.o(.text)
+    Startup.s                                0x00000000   Number         0  startup.o ABSOLUTE
+    basic.s                                  0x00000000   Number         0  basic.o ABSOLUTE
+    PROGRAM1                                 0x00000020   Section       12  basic.o(PROGRAM1)
+    RESET                                    0x0000002c   Section      272  startup.o(RESET)
+    Undef_Handler                            0x0000006c   ARM Code       4  startup.o(RESET)
+    SWI_Handler                              0x00000070   ARM Code       4  startup.o(RESET)
+    PAbt_Handler                             0x00000074   ARM Code       4  startup.o(RESET)
+    DAbt_Handler                             0x00000078   ARM Code       4  startup.o(RESET)
+    IRQ_Handler                              0x0000007c   ARM Code       4  startup.o(RESET)
+    FIQ_Handler                              0x00000080   ARM Code       4  startup.o(RESET)
+    HEAP                                     0x40000000   Section        0  startup.o(HEAP)
+    STACK                                    0x40000000   Section     1160  startup.o(STACK)
+    Heap_Mem                                 0x40000000   Data           0  startup.o(HEAP)
+    Stack_Mem                                0x40000000   Data        1024  startup.o(STACK)
+    Stack_Top                                0x40000488   Data           0  startup.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv1$ARM_ISAv4$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$STANDARDLIB$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __user_initial_stackheap                 0x00000000   ARM Code       0  startup.o(.text)
+    __main                                   0x00000020   ARM Code       0  basic.o(PROGRAM1)
+    Reset_Handler                            0x00000084   ARM Code       0  startup.o(RESET)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x00000000
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x0000013c, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x0000013c, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000020   Code   RO            4  * .text               startup.o
+    0x00000020   0x0000000c   Code   RO           11    PROGRAM1            basic.o
+    0x0000002c   0x00000110   Code   RO            3    RESET               startup.o
+
+
+    Execution Region ER_RW (Base: 0x40000000, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+    Execution Region ER_ZI (Base: 0x40000000, Size: 0x00000488, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x40000000   0x00000000   Zero   RW            2    HEAP                startup.o
+    0x40000000   0x00000488   Zero   RW            1    STACK               startup.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        12          0          0          0          0        160   basic.o
+       304         60          0          0       1160        444   startup.o
+
+    ----------------------------------------------------------------------
+       316         60          0          0       1160        604   Object Totals
+         0          0          0          0          0          0   (incl. Generated)
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+         0          0          0          0          0          0   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+       316         60          0          0       1160        604   Grand Totals
+       316         60          0          0       1160        604   ELF Image Totals
+       316         60          0          0          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                  316 (   0.31kB)
+    Total RW  Size (RW Data + ZI Data)              1160 (   1.13kB)
+    Total ROM Size (Code + RO Data + RW Data)        316 (   0.31kB)
+
+==============================================================================
+

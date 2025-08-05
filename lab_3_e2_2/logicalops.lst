@@ -1,0 +1,51 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             logicalops,CODE,READONLY
+    2 00000000         ENTRY
+    3 00000000 E3E00000        MOV              R0,#0XFFFFFFFF
+    4 00000004 E3A01EAB        MOV              R1,#0X00000AB0
+    5 00000008 E0003001        AND              R3,R0,R1
+    6 0000000C E0204001        EOR              R4,R0,R1
+    7 00000010 E1805001        ORR              R5,R0,R1
+    8 00000014 EAFFFFFE 
+                       s       B                s
+    9 00000018                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\logicalops.d -o.\logic
+alops.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Ph
+ilips --predefine="__EVAL SETA 1" --list=.\logicalops.lst logicalops.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 2 in file logicalops.s
+   Uses
+      None
+Comment: ENTRY unused
+logicalops 00000000
+
+Symbol: logicalops
+   Definitions
+      At line 1 in file logicalops.s
+   Uses
+      None
+Comment: logicalops unused
+s 00000014
+
+Symbol: s
+   Definitions
+      At line 8 in file logicalops.s
+   Uses
+      At line 8 in file logicalops.s
+Comment: s used once
+3 symbols
+334 symbols in table

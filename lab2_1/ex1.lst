@@ -1,0 +1,38 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PROGRAM, CODE, READONLY
+    2 00000000                 ENTRY
+    3 00000000 E3E01000        MOV              R1,#0xffffffff ;0x means hexade
+                                                            cimal
+    4 00000004 E3A000AF        MOV              R0,#8_257   ;8_also means hexad
+                                                            ecimal
+    5 00000008 E3A02052        MOV              R2,#82      ;if nothing specifi
+                                                            ed, then number is 
+                                                            decimal
+    6 0000000C E3A0305D        MOV              R3,#2_1011101 ;2_means binary
+    7 00000010 E1A04001        MOV              R4,R1
+    8 00000014 E1A05002        MOV              R5,R2
+    9 00000018                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\ex1.d -o.\ex1.o -IC:\K
+eil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --predef
+ine="__EVAL SETA 1" --list=.\ex1.lst ex1.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+PROGRAM 00000000
+
+Symbol: PROGRAM
+   Definitions
+      At line 1 in file ex1.s
+   Uses
+      None
+Comment: PROGRAM unused
+1 symbol
+332 symbols in table
