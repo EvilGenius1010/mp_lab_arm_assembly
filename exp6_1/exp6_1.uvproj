@@ -45,7 +45,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>e2_3</OutputName>
+          <OutputName>exp6_1</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -406,9 +406,14 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>lab3.asm</FileName>
+              <FileName>Startup.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\Mohnish KEIL\lab3.asm</FilePath>
+              <FilePath>.\Startup.s</FilePath>
+            </File>
+            <File>
+              <FileName>main.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\main.s</FilePath>
             </File>
           </Files>
         </Group>

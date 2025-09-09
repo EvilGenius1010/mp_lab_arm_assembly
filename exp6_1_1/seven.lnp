@@ -1,0 +1,7 @@
+--cpu ARM7TDMI
+".\startup.o"
+".\seven.o"
+--library_type=microlib --strict --scatter ".\seven.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\seven.map" -o .\seven.axf

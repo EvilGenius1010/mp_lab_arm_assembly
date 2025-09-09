@@ -1,0 +1,1 @@
+.\seven.o: seven.asm

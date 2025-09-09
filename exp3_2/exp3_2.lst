@@ -1,0 +1,137 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ADD16BIT, CODE,READONLY
+    2 00000000         ENTRY
+    3 00000000         START
+    4 00000000 E3A00000        MOV              R0,#0
+    5 00000004 E59F1024        LDR              R1,VALUE1
+    6 00000008 E59F301C        LDR              R3,MASK
+    7 0000000C E0021003        AND              R1,R2,R3
+    8 00000010 E0800001        ADD              R0,R0,R1
+    9 00000014 E59F2016        LDR              R2,VALUE2
+   10 00000018 E0022003        AND              R2,R2,R3
+   11 0000001C E0800002        ADD              R0,R0,R2
+   12 00000020 E59F400C        LDR              R4,=RESULT
+   13 00000024 E5841000        STR              R1,[R4]
+   14 00000028 EAFFFFFE 
+                       HERE    B                HERE
+   15 0000002C         
+   16 0000002C 0000FFFF 
+                       MASK    DCD              0X0000FFFF
+   17 00000030 AA AA   VALUE1  DCW              0XAAAA
+   18 00000032         ALIGN
+   19 00000032 22 22   VALUE2  DCW              0X2222
+   20 00000034         
+   21 00000034 00000000        AREA             DATA2,DATA,READWRITE
+   22 00000000 00000000 
+              00000000 RESULT  DCD              0X0,0X0
+   23 00000008         
+   24 00000008                 END
+Command Line: --debug --xref --apcs=interwork --depend=.\exp3_2.d -o.\exp3_2.o 
+-IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --
+predefine="__EVAL SETA 1" --list=.\exp3_2.lst exp3_2.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ADD16BIT 00000000
+
+Symbol: ADD16BIT
+   Definitions
+      At line 1 in file exp3_2.s
+   Uses
+      None
+Comment: ADD16BIT unused
+ALIGN 00000032
+
+Symbol: ALIGN
+   Definitions
+      At line 18 in file exp3_2.s
+   Uses
+      None
+Comment: ALIGN unused
+ENTRY 00000000
+
+Symbol: ENTRY
+   Definitions
+      At line 2 in file exp3_2.s
+   Uses
+      None
+Comment: ENTRY unused
+HERE 00000028
+
+Symbol: HERE
+   Definitions
+      At line 14 in file exp3_2.s
+   Uses
+      At line 14 in file exp3_2.s
+Comment: HERE used once
+MASK 0000002C
+
+Symbol: MASK
+   Definitions
+      At line 16 in file exp3_2.s
+   Uses
+      At line 6 in file exp3_2.s
+Comment: MASK used once
+START 00000000
+
+Symbol: START
+   Definitions
+      At line 3 in file exp3_2.s
+   Uses
+      None
+Comment: START unused
+VALUE1 00000030
+
+Symbol: VALUE1
+   Definitions
+      At line 17 in file exp3_2.s
+   Uses
+      At line 5 in file exp3_2.s
+Comment: VALUE1 used once
+VALUE2 00000032
+
+Symbol: VALUE2
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 19 in file exp3_2.s
+   Uses
+      At line 9 in file exp3_2.s
+Comment: VALUE2 used once
+8 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+DATA2 00000000
+
+Symbol: DATA2
+   Definitions
+      At line 21 in file exp3_2.s
+   Uses
+      None
+Comment: DATA2 unused
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 22 in file exp3_2.s
+   Uses
+      At line 12 in file exp3_2.s
+Comment: RESULT used once
+2 symbols
+343 symbols in table

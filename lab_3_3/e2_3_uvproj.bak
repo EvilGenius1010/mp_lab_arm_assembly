@@ -406,9 +406,9 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>lab3.asm</FileName>
+              <FileName>sort.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\..\Mohnish KEIL\lab3.asm</FilePath>
+              <FilePath>.\sort.s</FilePath>
             </File>
           </Files>
         </Group>
