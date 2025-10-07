@@ -1,0 +1,17 @@
+PINSEL1  EQU 0xE002C004     
+DACR     EQU 0xE006C000    
+	AREA CHANG, CODE, READONLY
+	EXPORT __main              
+__main
+   ENTRY
+    LDR R0, =PINSEL1
+    LDR R1, =DACR
+    LDR R2, =0x00080000
+	STR R2, [R0]
+
+BACK
+    MOV R4, R3, LSL#6
+    STR R4, [R1]
+    ADD R3, R3, #1
+    B BACK
+    END

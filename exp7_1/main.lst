@@ -1,0 +1,187 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ; INCLUDE VICVPB.S
+    2 00000000 E0028000 
+                       IO0PIN  EQU              0xE0028000
+    3 00000000 E0028004 
+                       IO0SET  EQU              0xE0028004
+    4 00000000 E0028008 
+                       IO0DIR  EQU              0xE0028008
+    5 00000000 E002800C 
+                       IO0CLR  EQU              0xE002800C
+    6 00000000 E0028010 
+                       IO1PIN  EQU              0xE0028010
+    7 00000000 E0028014 
+                       IO1SET  EQU              0xE0028014
+    8 00000000 E0028018 
+                       IO1DIR  EQU              0xE0028018
+    9 00000000 E002801C 
+                       IO1CLR  EQU              0xE002801C
+   10 00000000         
+   11 00000000         
+   12 00000000                 AREA             CHANG, CODE, READONLY
+   13 00000000                 EXPORT           __main
+   14 00000000         
+   15 00000000         __main
+   16 00000000                 ENTRY
+   17 00000000         ; Configure P0.7 as output
+   18 00000000 E59F1030        LDR              r1, =IO0DIR
+   19 00000004 E3A008FF        LDR              r0, =0XFF0000 ; Bit 7 set for P
+                                                            0.7
+   20 00000008 E5810000        STR              r0, [r1]
+   21 0000000C         
+   22 0000000C         ; Load IOCLR and IOSET addresses
+   23 0000000C E59F2028        LDR              r2, =IO0CLR
+   24 00000010 E59F3028        LDR              r3, =IO0SET
+   25 00000014         
+   26 00000014         BACK
+   27 00000014 E5820000        STR              r0, [r2]    ; Clear P0.7 (LOW)
+   28 00000018 EB000002        BL               DELAY
+   29 0000001C E5830000        STR              r0, [r3]    ; Set P0.7 (HIGH)
+   30 00000020 EB000000        BL               DELAY
+   31 00000024 EAFFFFFA        B                BACK
+   32 00000028         
+   33 00000028         DELAY
+   34 00000028 E59F5014        LDR              r5, =0x2FFF
+   35 0000002C         WAIT
+   36 0000002C E2555001        SUBS             r5, r5, #1
+   37 00000030 1AFFFFFD        BNE              WAIT
+   38 00000034 E12FFF1E        BX               LR
+   39 00000038                 END
+              E0028008 
+              E002800C 
+              E0028004 
+              00002FFF 
+Command Line: --debug --xref --apcs=interwork --depend=.\main.d -o.\main.o -IC:
+\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --pred
+efine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --list=.\main.lst main.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+BACK 00000014
+
+Symbol: BACK
+   Definitions
+      At line 26 in file main.s
+   Uses
+      At line 31 in file main.s
+Comment: BACK used once
+CHANG 00000000
+
+Symbol: CHANG
+   Definitions
+      At line 12 in file main.s
+   Uses
+      None
+Comment: CHANG unused
+DELAY 00000028
+
+Symbol: DELAY
+   Definitions
+      At line 33 in file main.s
+   Uses
+      At line 28 in file main.s
+      At line 30 in file main.s
+
+WAIT 0000002C
+
+Symbol: WAIT
+   Definitions
+      At line 35 in file main.s
+   Uses
+      At line 37 in file main.s
+Comment: WAIT used once
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 15 in file main.s
+   Uses
+      At line 13 in file main.s
+Comment: __main used once
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+IO0CLR E002800C
+
+Symbol: IO0CLR
+   Definitions
+      At line 5 in file main.s
+   Uses
+      At line 23 in file main.s
+Comment: IO0CLR used once
+IO0DIR E0028008
+
+Symbol: IO0DIR
+   Definitions
+      At line 4 in file main.s
+   Uses
+      At line 18 in file main.s
+Comment: IO0DIR used once
+IO0PIN E0028000
+
+Symbol: IO0PIN
+   Definitions
+      At line 2 in file main.s
+   Uses
+      None
+Comment: IO0PIN unused
+IO0SET E0028004
+
+Symbol: IO0SET
+   Definitions
+      At line 3 in file main.s
+   Uses
+      At line 24 in file main.s
+Comment: IO0SET used once
+IO1CLR E002801C
+
+Symbol: IO1CLR
+   Definitions
+      At line 9 in file main.s
+   Uses
+      None
+Comment: IO1CLR unused
+IO1DIR E0028018
+
+Symbol: IO1DIR
+   Definitions
+      At line 8 in file main.s
+   Uses
+      None
+Comment: IO1DIR unused
+IO1PIN E0028010
+
+Symbol: IO1PIN
+   Definitions
+      At line 6 in file main.s
+   Uses
+      None
+Comment: IO1PIN unused
+IO1SET E0028014
+
+Symbol: IO1SET
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Absolute symbols
+
+   Definitions
+      At line 7 in file main.s
+   Uses
+      None
+Comment: IO1SET unused
+8 symbols
+347 symbols in table
